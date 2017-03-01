@@ -1,0 +1,41 @@
+/* 
+	Style de la page
+*/
+
+
+/* 
+	Configuration générale // remise à zéro du style de base
+*/
+
+	* {
+		margin : 0;
+		padding: 0;
+	}
+
+	html {
+		font-size: 62.5%;
+		color: white;
+		background-color: red;
+
+	}
+
+	body {
+		font-size: 1.5rem;
+
+	}
+
+	ul {
+		list-style: none;
+	}
+
+
+/* Fin de la configuration générale */
+
+/*
+	Nav
+ */
+ 	a {
+ 		text-decoration: none;
+ 		text-transform: uppercase;
+ 	}
+
