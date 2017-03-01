@@ -11,22 +11,43 @@
 
 	html { font-size: 62.5%; }
 
-	body { font-size: 1.5rem; }
+	body { font-size: 1.5rem; background-color: black; }
 
-	ul {
-		list-style: none;
-	}
+	main { color: white; }
+
+	ul, li { display: inline-block; }
+
+	ul { list-style: none; }
+
+	li {  }
 
 	a {
 		text-decoration: none;
+		color: white;
 	}
 
-	h1 {
+	h1, h2 {
 		font-weight: normal;
 	}
 
+	h1 { font-size: 2rem; }
+
+	h2 {
+		text-align: center;
+		font-size: 3rem;
+		font-weight: lighter;
+
+		
+	}
+
+	aside {
+		font-size: 1rem;
+		text-align: center;
+	}
 
 /* Fin de la configuration générale */
+
+
 
 /*
 	Nav
@@ -35,3 +56,48 @@
  		text-transform: uppercase;
  	}
 
+ 	h1 a span {
+ 		font-weight: bolder;
+ 	}
+
+/*
+	Accroche
+ */
+ 	#accroche h2 {
+ 		font-size: 1.5rem;
+ 		text-align: left;
+ 	}
+
+ 	#accroche p {
+ 		font-size: 1rem;
+ 	}
+
+/*
+	expertises
+ */
+
+ 	#expertises {
+ 	
+ 		background-color: orange;
+
+ 	}
+
+
+ /*
+ 	réalisations
+  */
+ 
+ 	#dernieresRealisations {
+ 		background-color: brown;
+
+ 	}
+
+
+ /*
+ 	agence
+  */
+ 
+ 	#agence {
+ 		background-color: #236750;
+
+ 	}
