@@ -7,25 +7,22 @@
 	Configuration générale // remise à zéro du style de base
 */
 
-	* {
-		margin : 0;
-		padding: 0;
-	}
+	* { margin : 0; padding: 0; }
 
-	html {
-		font-size: 62.5%;
-		color: white;
-		background-color: red;
+	html { font-size: 62.5%; }
 
-	}
-
-	body {
-		font-size: 1.5rem;
-
-	}
+	body { font-size: 1.5rem; }
 
 	ul {
 		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	h1 {
+		font-weight: normal;
 	}
 
 
@@ -34,8 +31,7 @@
 /*
 	Nav
  */
- 	a {
- 		text-decoration: none;
+ 	nav a {
  		text-transform: uppercase;
  	}
 
