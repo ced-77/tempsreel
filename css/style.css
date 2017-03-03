@@ -86,7 +86,7 @@
 
  	#expertises {
  	
- 		background-color: orange;
+ 		background-color: #FF9900;
  		
 
  	}
@@ -115,20 +115,43 @@
   */
  
  	#dernieresRealisations {
- 		background-color: brown;
+ 		background-color: #841E40;
 
  	}
 
 
  /*
- 	agence
-  */
+ 	Chef de projet
+ */
  
- 	#agence {
- 		background-color: #236750;
+ 	#chefDeProjet {
+ 		background-color: #44A5AC;
 
  	}
 
+ /*
+ 	Clients
+ */
+ 
+ 	#clients {
+ 		background-color: #486477;
+ 	}
+
+ /*
+ 	Solutions
+ */
+
+ 	#solutions {
+ 		background-color: #46A1D6;
+ 	}
+
+/*
+	Contacts
+ */
+
+ 	#contacts {
+ 		background-color: #232323;
+ 	}
 
 
 
