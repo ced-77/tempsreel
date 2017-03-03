@@ -87,8 +87,12 @@
  	#expertises {
  	
  		background-color: orange;
- 		margin: auto;
+ 		
 
+ 	}
+
+ 	#expertises {
+ 		margin: auto;
  	}
 
  	#expertises article {
