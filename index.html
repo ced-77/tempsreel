@@ -111,7 +111,7 @@
 
 				<!-- section Intertitre 1 -->
 				<div>
-					<section>
+					<section class="intertitre" >
 						<h2>Tempsréel</h2>
 						<aside>Le supplément d'âme de vos projets</aside>
 					</section>
@@ -137,7 +137,7 @@
 
 				<!-- section Intertitre 2 -->
 				<div>
-					<section>
+					<section class="intertitre" >
 						<h2>Pour diriger vos projets</h2>
 						<aside>Quel interlocuteur cherchez-vous ?</aside>
 					</section>
@@ -184,6 +184,39 @@
 							<h3><span><i class="fa fa-camera" aria-hidden="true"></i></span>Passioné</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur venenatis sed leo sed interdum. Sed ullamcorper imperdiet arcu, id fringilla tellus accumsan nec.</p>
 						</article>
+
+						<article>
+
+							<!-- 
+								Etant une liste de renseignement et non des titres j'ai opté pour une liste
+							 -->
+							<ul>
+								<li>
+									<span><i class="fa fa-cog" aria-hidden="true"></i></span>
+									<p>25 ans d’expérience capitalisée</p>
+								</li>
+								<li>
+									<span><i class="fa fa-rocket" aria-hidden="true"></i></span>
+									<p>60 projets mis sur orbite</p>
+								</li>
+								<li>
+									<span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
+									<p>Un CA annuel à 120% de croissance</p>
+								</li>
+								<li>
+									<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+									<p>Des interventions dans toute l’Ile-de-France</p>
+								</li>
+								<li>
+									<span><i class="fa fa-sitemap" aria-hidden="true"></i></span>
+									<p>Un réseau d’experts</p>
+								</li>
+								<li>
+									<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+									<p>99% de clients satisfaits</p>
+								</li>
+							</ul>
+						</article>
 						
 					</section>
 
@@ -192,33 +225,39 @@
 
 				<!-- section Intertitre 3 -->
 				<div>
-					<section>
-						<h2></h2>
-						<aside></aside>
+					<section class="intertitre" >
+						<h2>Mes références</h2>
+						<aside>Voici quelques clients satisfaits...</aside>
 					</section>
 				</div>
 
 				<!-- section clients -->
 				<div id="clients" >
 					<section>
-						<h2></h2>
+						<h2>Clients</h2>
 						<aside></aside>
+
+						<!-- 
+								Vue que les aveugles ne  voyent pas les images 
+								alors il faut leur indiquer quels sont les clients pour qui
+								nous avont travaillé d'où le alt
+						 -->
 						<article>
-							<img src="images/logo01.jpg" alt="" />
-							<img src="images/logo02.jpg" alt="" />
-							<img src="images/logo03.jpg" alt="" />
-							<img src="images/logo04.jpg" alt="" />
-							<img src="images/logo05.jpg" alt="" />
-							<img src="images/logo06.jpg" alt="" />
+							<img src="logos/logo01.jpg" alt="Lacoste" />
+							<img src="logos/logo02.jpg" alt="Vuarnet" />
+							<img src="logos/logo03.jpg" alt="Club Med" />
+							<img src="logos/logo04.jpg" alt="Centrale Supélec" />
+							<img src="logos/logo05.jpg" alt="Danone" />
+							<img src="logos/logo06.jpg" alt="Salomon" />
 						</article>
-							<img src="images/logo07.jpg" alt="" />
-							<img src="images/logo08.jpg" alt="" />
-							<img src="images/logo09.jpg" alt="" />
-							<img src="images/logo10.jpg" alt="" />
-							<img src="images/logo11.jpg" alt="" />
-							<img src="images/logo12.jpg" alt="" />
-						<article>
 							
+						<article>
+							<img src="logos/logo07.jpg" alt="Dynastar" />
+							<img src="logos/logo08.jpg" alt="SNCF" />
+							<img src="logos/logo09.jpg" alt="Lacroix" />
+							<img src="logos/logo10.jpg" alt="Actinuum" />
+							<img src="logos/logo11.jpg" alt="UCPA" />
+							<img src="logos/logo12.jpg" alt="Le Sucre" />
 						</article>
 						
 					</section>
@@ -226,21 +265,38 @@
 
 				<!-- section Intertitre 4 -->
 				<div>
-					<section>
-						<h2></h2>
-						<aside></aside>
+					<section class="intertitre" >
+						<h2>Les solutions technologiques</h2>
+						<aside>au service de l'imagination</aside>
 					</section>
 				</div>
 
 				<!-- section solutions -->
 				<div id="solutions" >
+
+					<!-- 
+							A verif si on met en image ou plutot en paragraphe ... et donc comment
+							on met cela ne place
+					 -->
 					<section>
+						<h2></h2>
+						<aside></aside>
+						<article>
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+							<img src="#" alt="" />
+						</article>
 						
 					</section>
 				</div>
 				<!-- section Intertitre 5 -->
 				<div>
-					<section>
+					<section class="intertitre" >
 						<h2></h2>
 						<aside></aside>
 					</section>
@@ -248,11 +304,21 @@
 
 				<!-- section contacts -->
 				<div id="contacts" >
+
 					<section>
+						<h2>Contactez-moi</h2>
+						<aside>Avis conseil et devis gratuit sans engagement</aside>
 
 						<!-- Formulaire de contacts -->
 
 						<form>
+							<h3>Contact</h3>
+							<label form="civilite" >Civilité : </label>
+							<select id="civilite" name="civilite" >
+								<option value="1" >Mme</option>
+								<option value="2">Mlle</option> <!-- Obligatoire par opcaste car on doit laisser le choix à l'internaute -->
+								<option value="0" SELECTED >M</option>
+							</select>
 
 							
 						</form>
