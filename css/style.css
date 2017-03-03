@@ -41,7 +41,7 @@
 
 	h2 {
 		font-size: 3rem;
-		font-weight: lighter; /* definition de la grosseur des traits (font des carcteres) */
+		font-weight: 300; /* definition de la grosseur des traits (font des carcteres) */
 		padding-top: 2rem; /* definition de l'espacement haut des titres H2 */
 	
 	}
