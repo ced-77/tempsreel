@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
+/*font-family: 'Roboto', sans-serif;*/
+
 /* 
 	Style de la page
 */
@@ -11,7 +14,7 @@
 
 	html { font-size: 62.5%; } /* deffinition de la grosseur de caractère qui sera redefini pour un smartphone */
 
-	body { font-size: 1.5rem; background-color: black; } /* definition de la proportion de la taille caractere du site et de la couleur de fond */
+	body { font-size: 1.5rem; background-color: black; font-family: 'Roboto', sans-serif; } /* definition de la proportion de la taille caractere du site et de la couleur de fond */
 
 	main { color: white; } /* definition de la couleur par defautl */
 
@@ -126,6 +129,21 @@
  
  	#chefDeProjet {
  		background-color: #44A5AC;
+
+ 	}
+
+ 	/* partie à revoir pour exclure le premier article */
+
+ 	/*#chefDeProjet section article:not(#chefDeProjet section article:first-of-type ) {
+ 	    display: inline-block;
+ 	    vertical-align: top;
+ 	    width: 15rem;
+ 	    margin: 1rem;
+ 	}*/
+
+ 	#chefDeProjet span {
+ 		display: inline-block;
+ 		margin-right: 1rem;
 
  	}
 
