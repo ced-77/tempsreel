@@ -9,11 +9,11 @@
 
 	* { margin : 0; padding: 0; }
 
-	html { font-size: 62.5%; }
+	html { font-size: 62.5%; } /* deffinition de la grosseur de caractère qui sera redefini pour un smartphone */
 
-	body { font-size: 1.5rem; background-color: black; }
+	body { font-size: 1.5rem; background-color: black; } /* definition de la proportion de la taille caractere du site et de la couleur de fond */
 
-	main { color: white; }
+	main { color: white; } /* definition de la couleur par defautl */
 
 	ul, li { display: inline-block; }
 
@@ -31,21 +31,21 @@
 	}
 
 	h2, h3 {
-		text-align: center;
+		text-align: center; /* centrage des titres */
 	}
 
 	h1 { font-size: 2rem; }
 
 	h2 {
 		font-size: 3rem;
-		font-weight: lighter;
-		padding-top: 2rem;
+		font-weight: lighter; /* definition de la grosseur des traits (font des carcteres) */
+		padding-top: 2rem; /* definition de l'espacement haut des titres H2 */
 	
 	}
 
 	.fa {
-		display: block;
-		text-align: center;
+		display: block; /* Mise en forme block des font-awesome pour un centrage */
+		text-align: center; /* Centrage des font-awesome */
 	}
 
 	aside {
@@ -61,7 +61,7 @@
 	Nav
  */
  	nav a {
- 		text-transform: uppercase;
+ 		text-transform: uppercase; /* Mise en majuscule des choix de la navigation */
  	}
 
  	h1 a span {
