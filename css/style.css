@@ -79,13 +79,62 @@
  /*
  	Intertitre
  */
- 	.intertitre {
+ 	.intertitre, #accroche {
  		height: 20rem;
+ 	}
+
+ 	#intertitre_01 {
+ 		background-image: url('../images/photo-02.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
+ 	}
+
+ 	#intertitre_02 {
+ 		background-image: url('../images/photo-03.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
+ 	}
+
+ 	#intertitre_03 {
+ 		background-image: url('../images/photo-04.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
+ 	}
+
+ 	#intertitre_04 {
+ 		background-image: url('../images/photo-05.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
+ 	}
+
+ 	#intertitre_05 {
+ 		background-image: url('../images/photo-06.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
  	}
 
 /*
 	Accroche
  */
+
+ 	#accroche {
+ 		background-image: url('images/photo-01.jpg');
+ 		background-repeat: no-repeat;
+ 		/*background-attachment: fixed;*/
+ 		background-size: 100% 100%;
+ 		background-position: center;
+ 	}
+
  	#accroche h2 {
  		font-size: 1.5rem;
  		text-align: left;
