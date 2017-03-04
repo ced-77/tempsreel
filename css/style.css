@@ -261,6 +261,17 @@
  		background-color: #232323;
  	}
 
+ 	#contacts form {
+ 		display: inline-block;
+ 		/*width: 50%;*/
+ 	}
+
+ 	#contacts article {
+ 		display: inline-block;
+ 		right: 0rem;
+ 		/*width: 20%*/
+ 	}
+
 
 
 

@@ -314,17 +314,31 @@
 						<form>
 
 							<h3>Contact</h3>
-							<label form="civilite" >Civilité : </label>
-							<select id="civilite" name="civilite" >
-								<option value="1" >Mme</option>
-								<option value="2">Mlle</option> <!-- Obligatoire par opcaste car on doit laisser le choix à l'internaute -->
-								<option value="0" SELECTED >M</option>
-							</select>
-							<label from="nom" >Votre nom* :</label>
-							<input type="text" name="nom" id="nom" />
-							<label from="prenom" >Votre prénom :</label>
-							<input type="text" name="prenom" id="prenom" />
-							
+							<p>
+								<label for="civilite" >Civilité : </label>
+								<select id="civilite" name="civilite" >
+									<option value="1" >Mme</option>
+									<option value="2">Mlle</option> <!-- Obligatoire par opcaste car on doit laisser le choix à l'internaute -->
+									<option value="0" SELECTED >M</option>
+								</select>
+								<label for="nom" >Votre nom* :</label>
+								<input type="text" name="nom" id="nom" />
+								<label for="prenom" >Votre prénom* :</label>
+								<input type="text" name="prenom" id="prenom" />
+							</p>
+							<p>
+							<label for="entreprise" >Votre entreprise* :</label>
+							<input type="text" name="entreprise" id="entreprise" />
+							</p>
+							<p>
+							<label for="telephone" >Votre téléphone* :</label>
+							<input type="text" name="telephone" id="telephone" />
+							<label for="email" >Votre E-mail* :</label>
+							<input type="email" name="email" id="email" />
+							</p>
+
+
+
 
 							
 						</form>
