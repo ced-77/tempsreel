@@ -314,27 +314,49 @@
 						<form>
 
 							<h3>Contact</h3>
-							<p>
-								<label for="civilite" >Civilité : </label>
-								<select id="civilite" name="civilite" >
-									<option value="1" >Mme</option>
-									<option value="2">Mlle</option> <!-- Obligatoire par opcaste car on doit laisser le choix à l'internaute -->
-									<option value="0" SELECTED >M</option>
-								</select>
-								<label for="nom" >Votre nom* :</label>
-								<input type="text" name="nom" id="nom" />
-								<label for="prenom" >Votre prénom* :</label>
-								<input type="text" name="prenom" id="prenom" />
+							<p id="forumlaire_ligne_1" >
+								<div class="formulaire" >
+									<label for="civilite" >Civilité : </label>
+									<select id="civilite" name="civilite" >
+										<option value="1" >Mme</option>
+										<option value="2">Mlle</option> <!-- Obligatoire par opcaste car on doit laisser le choix à l'internaute -->
+										<option value="0" SELECTED >M</option>
+									</select>
+								</div>
+								<div class="formulaire" >
+									<label for="nom" >Votre nom* :</label>
+									<input type="text" name="nom" id="nom" />
+								</div>
+								<div class="formulaire" >
+									<label for="prenom" >Votre prénom* :</label>
+									<input type="text" name="prenom" id="prenom" />
+								</div>
 							</p>
 							<p>
-							<label for="entreprise" >Votre entreprise* :</label>
-							<input type="text" name="entreprise" id="entreprise" />
+								<label for="entreprise" >Votre entreprise* :</label>
+								<input type="text" name="entreprise" id="entreprise" />
 							</p>
 							<p>
-							<label for="telephone" >Votre téléphone* :</label>
-							<input type="text" name="telephone" id="telephone" />
-							<label for="email" >Votre E-mail* :</label>
-							<input type="email" name="email" id="email" />
+								<label for="telephone" >Votre téléphone* :</label>
+								<input type="text" name="telephone" id="telephone" />
+								<label for="email" >Votre E-mail* :</label>
+								<input type="email" name="email" id="email" />
+							</p>
+							<p>
+								<label for="objet" >Objet* :</label>
+								<input type="text" name="objet" id="objet" />
+							</p>
+							<p>
+								<label>Description détaillée :</label>
+								<textarea name="description" >
+									
+								</textarea>
+							</p>
+							<p>
+								captcha
+							</p>
+							<p>
+								<input type="submit" name="envoyer" />
 							</p>
 
 

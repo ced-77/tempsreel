@@ -60,6 +60,10 @@
 		text-align: center;
 	}
 
+	form {
+		color: gray;
+	}
+
 /* Fin de la configuration générale */
 
 
@@ -130,9 +134,9 @@
  */
 
  	#accroche {
- 		background-image: url('images/photo-01.jpg');
+ 		background-image: url('../images/photo-01-01.jpg');
  		background-repeat: no-repeat;
- 		/*background-attachment: fixed;*/
+ 		background-attachment: fixed;
  		background-size: 100% 100%;
  		background-position: center;
  	}
@@ -261,9 +265,25 @@
  		background-color: #232323;
  	}
 
+ 	#contacts h3 {
+ 		text-align: left;
+ 	}
+
  	#contacts form {
- 		display: inline-block;
+ 		display: inline;
  		/*width: 50%;*/
+ 	}
+
+ 	#formulaire_ligne_1 {
+ 		display: block;
+ 	}
+
+ 	#contacts .formulaire {
+ 		display: inline;
+ 	}
+
+ 	#contacts label, #contacts input {
+ 		display: block;
  	}
 
  	#contacts article {
