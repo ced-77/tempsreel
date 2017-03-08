@@ -168,7 +168,7 @@
  	#expertises article {
  	    display: inline-block;
  	    vertical-align: top;
- 	    width: 15rem;
+ 	    max-width: 15rem;
  	    margin: 1rem;
  	}
 
@@ -216,7 +216,7 @@
 
  	#chefDeProjet li {
  		padding: 1rem;
- 		width: 15rem;
+ 		max-width: 15rem;
  		vertical-align: top;
  	}
 
@@ -240,11 +240,11 @@
 
  	#clients article {
  		margin: auto;
- 		width: 75rem;
+ 		max-width: 75rem;
  	}
 
  	#clients img {
- 		width: 10rem;
+ 		max-width: 10rem;
  		margin: 1rem;
  	}
 
@@ -271,7 +271,7 @@
 
  	#contacts form {
  		display: inline;
- 		/*width: 50%;*/
+ 		max-width: 50%;
  	}
 
  	#formulaire_ligne_1 {
