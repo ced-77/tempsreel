@@ -1,28 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
-/*font-family: 'Roboto', sans-serif;*/
 
 /* 
-	Style de la page
+RESET ---------------------------------------------------------------------------
 */
 
+	* { 
+		margin : 0; padding: 0;
+	}
 
-/* 
-	Configuration générale // remise à zéro du style de base
-*/
+	html {
+		font-size: 62.5%;
+	}
 
-	* { margin : 0; padding: 0; }
+	body {
+		font-size: 1.5rem;
+		background-color: black;
+		font-family: 'Roboto', sans-serif;
+		text-align: center;
+	}
 
-	html { font-size: 62.5%; } /* deffinition de la grosseur de caractère qui sera redefini pour un smartphone */
+	main {
+		color: white;
+	}
 
-	body { font-size: 1.5rem; background-color: black; font-family: 'Roboto', sans-serif; } /* definition de la proportion de la taille caractere du site et de la couleur de fond */
+	ul, li {
+		display: inline-block;
+	}
 
-	main { color: white; } /* definition de la couleur par defautl */
+	ul {
+		list-style: none;
+	}
 
-	ul, li { display: inline-block; }
+	li {
 
-	ul { list-style: none; }
-
-	li {  }
+	}
 
 	a {
 		text-decoration: none;
@@ -30,169 +41,234 @@
 	}
 
 	h1, h2 {
-		font-weight: normal;
+		font-weight: 100;
 	}
 
 	h2, h3 {
-		text-align: center; /* centrage des titres */
+		text-align: center;
 	}
 
-	h1 { font-size: 2rem; }
+	h1 {
+		font-size: 2rem;
+	}
 
 	h2 {
 		font-size: 3rem;
-		font-weight: 300; /* definition de la grosseur des traits (font des carcteres) */
-		padding-top: 2rem; /* definition de l'espacement haut des titres H2 */
-	
+		padding-top: 2rem;
+	}
+
+	h3 {
+		font-size: 2.4rem;
+		font-weight: 500;
+	}
+
+	h4 {
+		font-style: normal;
 	}
 
 	div {
 		width: 100%;
+		margin: 0 auto 0 auto;
+		min-height: 40rem;
+	}
+
+	p {
+ 		font-size: 1.7rem;
+ 		font-weight: 300;
+    	font-style: normal;
+    	line-height: 2.2rem;
 	}
 
 	.fa {
-		display: block; /* Mise en forme block des font-awesome pour un centrage */
-		text-align: center; /* Centrage des font-awesome */
-	}
-
-	aside {
-		font-size: 1rem;
+		display: block;
 		text-align: center;
 	}
 
+<<<<<<< HEAD
 	form {
 		color: gray;
 	}
 
 /* Fin de la configuration générale */
+=======
+/* 
+FIN DU RESET ----------------------------------------------------------------------
+*/
 
 
 
 /*
-	Nav
+CSS 1 : VUE MOBILE JUSQU'A 500 px  ------------------------------------------------
+*/
+>>>>>>> gilles
+
+
+
+/*
+NAVIGATION
  */
+
+ 	#logo {
+ 		display: block;
+ 		margin-left: .5rem;
+ 		margin-top: 1rem;
+ 	}
+
  	nav a {
- 		text-transform: uppercase; /* Mise en majuscule des choix de la navigation */
+ 		text-transform: uppercase;
+ 		display: none;
  	}
 
  	h1 a span {
  		font-weight: bolder;
  	}
 
+/*
+SECTIONS
+ */
 
- /*
- 	Intertitre
+ 	section {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	section aside {
+		font-size: 1.7rem;
+		font-weight: 400;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 0 1rem 0 1rem;
+		margin-bottom: 4.5rem;
+	}
+
+	section p {
+		margin-bottom: 8rem;
+	}
+
+/*
+ACCROCHE HEAD
+ */
+
+ 	#accroche {
+ 		background-image: url('../images/photo-01.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
+ 	}
+ 	
+ 	#accroche section {
+ 		padding-top: 1rem;
+ 	}	
+
+ 	#accroche h2 {
+ 		font-size: 2.8rem;
+ 		font-weight: 100;
+ 	}
+
+ 	#accroche p {
+ 		font-size: 1.5rem;
+		font-weight: 300;
+		line-height: 1.9rem;
+ 		max-width: 80%;
+ 		margin-top:	19rem;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		margin-bottom: none;
+ 	}
+
+
+
+/*
+INTERTITRES
  */
  	.intertitre, #accroche {
- 		height: 20rem;
+ 		height: 45rem;
+ 	}
+
+ 	.intertitre h2 {
+ 	   	padding-top: 8rem;
+    	margin-bottom: 2rem;
  	}
 
  	#intertitre_01 {
  		background-image: url('../images/photo-02.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
+		background-repeat: no-repeat;
+ 		background-attachment: scroll;
+ 		background-size: cover;
+/*		background-position: center;*/
+
  	}
 
  	#intertitre_02 {
  		background-image: url('../images/photo-03.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
+		background-repeat: no-repeat;
+ 		background-attachment: scroll;
+ 		background-size: cover;
  	}
 
  	#intertitre_03 {
- 		color: black;
  		background-image: url('../images/photo-04.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
  	}
 
  	#intertitre_04 {
- 		color:black;
  		background-image: url('../images/photo-05.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
  	}
 
  	#intertitre_05 {
  		background-image: url('../images/photo-06.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
  	}
+
+
 
 /*
-	Accroche
- */
-
- 	#accroche {
- 		background-image: url('../images/photo-01-02.jpg');
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- 		background-size: 100% 100%;
- 		background-position: center;
- 	}
-
- 	#accroche h2 {
- 		font-size: 1.5rem;
- 		text-align: left;
- 	}
-
- 	#accroche p {
- 		font-size: 1rem;
- 	}
-
-/*
-	expertises
- */
+SECTION 1 - EXPERTISES
+*/
 
  	#expertises {
- 	
  		background-color: #FF9900;
- 		
-
  	}
-
- 	#expertises {
- 		margin: auto;
+ 	#expertises h2 {
+ 		margin-bottom: 1rem;
  	}
 
  	#expertises article {
  	    display: inline-block;
  	    vertical-align: top;
- 	    max-width: 15rem;
- 	    margin: 1rem;
+ 	    width: 25rem;
+    	margin-left: auto;
+    	margin-right: auto;
  	}
 
  	#expertises .fa {
  	    font-size: 5rem;
- 	    margin-top: 2rem;
- 	    margin-bottom: 1rem;
+ 	    margin-top: 1.5rem;
+ 	    margin-bottom: .5rem;
  	}
 
 
 
- /*
- 	réalisations
-  */
+
+/*
+SECT2 - REALISATIONS
+*/
  
- 	#dernieresRealisations {
+ 	#realisations {
  		background-color: #841E40;
-
  	}
 
 
- /*
- 	Chef de projet
- */
+/*
+SECT3 - CHEF DE PROJET
+*/
  
  	#chefDeProjet {
  		background-color: #44A5AC;
@@ -208,18 +284,39 @@
  	    margin: 1rem;
  	}*/
 
+ 	#chefDeProjet section {
+ 		padding-bottom:5rem;
+ 	}
+
+ 	#chefDeProjet h2 {
+ 		line-height: 3.2rem;
+    	margin-bottom: 2.1rem;
+ 	}
+
  	#chefDeProjet span {
  		display: inline-block;
  		margin-right: 1rem;
-
  	}
 
  	#chefDeProjet li {
  		padding: 1rem;
- 		max-width: 15rem;
+ 		width: 11rem;
  		vertical-align: top;
  	}
 
+	#chefDeProjet li .fa {
+	    display: inline-block;
+	    font-size: 2rem;
+	    margin-top: 1.5rem;
+	    margin-bottom: .5rem;
+	    background-color: #31787d;
+	    border-radius: 50%;
+	    height: 2.6rem;
+	    width: 2.6rem;
+	    padding-top: 1rem;
+	    padding-left: 0.6rem;
+	    padding-right: 0.4rem;
+	}
  	#chefDeProjet li span {
  		display: block;
  		font-size: 2.5rem;
@@ -228,19 +325,422 @@
 
  	#chefDeProjet li p {
  		font-size: 1.5rem;
+ 		line-height: 1.9rem;
  	}
 
- /*
- 	Clients
- */
+ 	#chefDeProjet p {
+ 	 	margin-bottom: 5rem;
+ 	}
+
+ 	#chefDeProjet .fa {
+		font-size: 3rem;
+	    margin-top: 1.5rem;
+	    margin-bottom: .5rem;
+	    background-color: #296367;
+	    border-radius: 50%;
+	    height: 4.4rem;
+	    width: 4.4rem;
+	    padding-top: 1.5rem;
+	    padding-left: 0.7rem;
+	    padding-right: 0.7rem;
+	}
+
+	#chefDeProjet article {
+		padding-right: 4rem;
+		padding-left: 4rem;
+	}
+
+	#chefDeProjet article:last-of-type {
+		padding-right: 0;
+		padding-left: 0;
+
+	}
+
+
+/*
+SECT4 - CLIENTS
+*/
  
  	#clients {
- 		background-color: #486477;
+ 		background-color: #486477
+ 	}
+
+ 	#clients section {
+ 		padding-bottom:5rem;
  	}
 
  	#clients article {
  		margin: auto;
+ 	}
+
+ 	#clients img {
+ 		width: 10rem;
+ 		margin: 1rem;
+ 	}
+
+
+ 
+/*
+SECT5 - SOLUTIONS
+*/
+ 
+
+ 	#solutions {
+ 		background-color: #46A1D6;
+ 	}
+
+ 	#solutions section {
+    padding-bottom: 5rem;
+}
+
+	#solutions article {
+ 		margin: auto;
+ 	}
+
+ 	#solutions img {
+ 		width: 10rem;
+ 		margin: 1rem;
+ 		background-color: #27709a;
+ 	}
+
+/*
+SECT6 - CONTACT
+*/
+
+
+ 	#contact {
+ 		background-color: #232323;
+ 	}
+
+ 	#contact form {
+ 		display: inline-block;
+ 		/*width: 50%;*/
+ 	}
+
+ 	#contact article {
+ 		display: inline-block;
+ 		right: 0rem;
+ 		/*width: 20%*/
+ 	}
+
+
+/*-----------------------------------------------------------------------------*/
+/* CSS PARTIE 2 : VUE FULL SCREEN SUPERIEURE A 500 px
+/*-----------------------------------------------------------------------------*/
+
+
+/*
+MEDIA QUERIES DE 500px à 1100px
+*/
+
+@media screen and (min-width: 500px) {
+
+	html {
+		font-size: 62.5%;
+	}
+  	
+  	section {
+  		max-width: 110rem;
+  		margin: auto;
+  	}
+
+/*
+NAVIGATION
+ */
+
+ 	#logo {
+ 		position: absolute;
+ 		display: block;
+ 		margin-left: 1rem;
+ 		margin-top: 1.2rem;
+ 	}
+
+ 	nav {
+ 		padding-top: 2rem;
+    	padding-bottom: 2rem;
+    	margin-right: 0;
+ 	}
+
+ 	nav a {
+ 		text-transform: uppercase;
+ 		display: inline-block;
+ 		padding-right: 2.2rem;
+ 		font-size: 1.3rem;
+ 	}
+
+ 	h1 a span {
+ 		font-weight: bolder;
+ 	}
+
+/*
+SECTIONS
+ */
+
+ 	section {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	section aside {
+		font-size: 1.7rem;
+		font-weight: 400;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 0 1rem 0 1rem;
+		margin-bottom: 4.5rem;
+	}
+
+	section p {
+		margin-bottom: 8rem;
+	}
+
+/*
+ACCROCHE HEAD
+ */
+
+ 	#accroche {
+<<<<<<< HEAD
+ 		background-image: url('../images/photo-01-02.jpg');
+ 		background-repeat: no-repeat;
+ 		background-attachment: fixed;
+ 		background-size: 100% 100%;
+ 		background-position: center;
+=======
+ 		background-image: url('../images/photo-01.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
+>>>>>>> gilles
+ 	}
+ 	
+ 	#accroche section {
+ 		padding-top: 1rem;
+ 	}	
+
+ 	#accroche h2 {
+ 		font-size: 2.8rem;
+ 		font-weight: 100;
+ 	}
+
+ 	#accroche p {
+ 		font-size: 1.5rem;
+		font-weight: 300;
+		line-height: 1.9rem;
+ 		max-width: 80%;
+ 		margin-top:	10rem;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		margin-bottom: none;
+ 	}
+
+
+
+/*
+INTERTITRES
+ */
+ 	.intertitre, #accroche {
+ 		height: 45rem;
+ 	}
+
+ 	.intertitre h2 {
+ 	   	padding-top: 8rem;
+    	margin-bottom: 2rem;
+ 	}
+
+ 	#intertitre_01 {
+ 		background-image: url('../images/photo-02.jpg');
+		background-repeat: no-repeat;
+ 		background-attachment: scroll;
+ 		background-size: cover;
+/*		background-position: center;*/
+
+ 	}
+
+ 	#intertitre_02 {
+ 		background-image: url('../images/photo-03.jpg');
+		background-repeat: no-repeat;
+ 		background-attachment: scroll;
+ 		background-size: cover;
+ 	}
+
+ 	#intertitre_03 {
+ 		background-image: url('../images/photo-04.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
+ 	}
+
+ 	#intertitre_04 {
+ 		background-image: url('../images/photo-05.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
+ 	}
+
+ 	#intertitre_05 {
+ 		background-image: url('../images/photo-06.jpg');
+	    background-repeat: no-repeat;
+	    background-attachment: scroll;
+	    background-size: cover
+ 	}
+
+
+
+/*
+SECTION 1 - EXPERTISES
+*/
+
+ 	#expertises {
+ 		background-color: #FF9900;
+ 	}
+ 	#expertises h2 {
+ 		margin-bottom: 1rem;
+ 	}
+
+ 	#expertises article {
+ 	    display: inline-block;
+ 	    vertical-align: top;
+<<<<<<< HEAD
+ 	    max-width: 15rem;
+ 	    margin: 1rem;
+=======
+ 	    width: 25rem;
+    	margin-left: auto;
+    	margin-right: auto;
+>>>>>>> gilles
+ 	}
+
+ 	#expertises .fa {
+ 	    font-size: 5rem;
+ 	    margin-top: 1.5rem;
+ 	    margin-bottom: .5rem;
+ 	}
+
+
+
+
+/*
+SECT2 - REALISATIONS
+*/
+ 
+ 	#realisations {
+ 		background-color: #841E40;
+ 	}
+
+
+/*
+SECT3 - CHEF DE PROJET
+*/
+ 
+ 	#chefDeProjet {
+ 		background-color: #44A5AC;
+
+ 	}
+
+ 	/* partie à revoir pour exclure le premier article */
+
+ 	/*#chefDeProjet section article:not(#chefDeProjet section article:first-of-type ) {
+ 	    display: inline-block;
+ 	    vertical-align: top;
+ 	    width: 15rem;
+ 	    margin: 1rem;
+ 	}*/
+
+ 	#chefDeProjet section {
+ 		padding-bottom:5rem;
+ 	}
+
+ 	#chefDeProjet h2 {
+ 		line-height: 3.2rem;
+    	margin-bottom: 2.1rem;
+ 	}
+
+ 	#chefDeProjet span {
+ 		display: inline-block;
+ 		margin-right: 1rem;
+ 	}
+
+ 	#chefDeProjet li {
+ 		padding: 1rem;
+<<<<<<< HEAD
+ 		max-width: 15rem;
+=======
+ 		width: 11rem;
+>>>>>>> gilles
+ 		vertical-align: top;
+ 	}
+
+	#chefDeProjet li .fa {
+	    display: inline-block;
+	    font-size: 2rem;
+	    margin-top: 1.5rem;
+	    margin-bottom: .5rem;
+	    background-color: #31787d;
+	    border-radius: 50%;
+	    height: 2.6rem;
+	    width: 2.6rem;
+	    padding-top: 1rem;
+	    padding-left: 0.6rem;
+	    padding-right: 0.4rem;
+	}
+ 	#chefDeProjet li span {
+ 		display: block;
+ 		font-size: 2.5rem;
+ 	}
+
+
+ 	#chefDeProjet li p {
+ 		font-size: 1.5rem;
+ 		line-height: 1.9rem;
+ 	}
+
+ 	#chefDeProjet p {
+ 	 	margin-bottom: 5rem;
+ 	}
+
+ 	#chefDeProjet .fa {
+		font-size: 3rem;
+	    margin-top: 1.5rem;
+	    margin-bottom: .5rem;
+	    background-color: #296367;
+	    border-radius: 50%;
+	    height: 4.4rem;
+	    width: 4.4rem;
+	    padding-top: 1.5rem;
+	    padding-left: 0.7rem;
+	    padding-right: 0.7rem;
+	}
+
+	#chefDeProjet article {
+		padding-right: 4rem;
+		padding-left: 4rem;
+	}
+
+	#chefDeProjet article:last-of-type {
+		padding-right: 0;
+		padding-left: 0;
+
+	}
+
+
+/*
+SECT4 - CLIENTS
+*/
+ 
+ 	#clients {
+ 		background-color: #486477
+ 	}
+
+ 	#clients section {
+ 		padding-bottom:5rem;
+ 	}
+
+ 	#clients article {
+ 		margin: auto;
+<<<<<<< HEAD
  		max-width: 75rem;
+=======
+>>>>>>> gilles
  	}
 
  	#clients img {
@@ -249,22 +749,40 @@
  	}
 
 
- /*
- 	Solutions
- */
+ 
+/*
+SECT5 - SOLUTIONS
+*/
+ 
 
  	#solutions {
  		background-color: #46A1D6;
  	}
 
-/*
-	Contacts
- */
+ 	#solutions section {
+    padding-bottom: 5rem;
+}
 
- 	#contacts {
+	#solutions article {
+ 		margin: auto;
+ 	}
+
+ 	#solutions img {
+ 		width: 10rem;
+ 		margin: 1rem;
+ 		background-color: #27709a;
+ 	}
+
+/*
+SECT6 - CONTACT
+*/
+
+
+ 	#contact {
  		background-color: #232323;
  	}
 
+<<<<<<< HEAD
  	#contacts h3 {
  		text-align: left;
  	}
@@ -284,33 +802,23 @@
 
  	#contacts label, #contacts input {
  		display: block;
+=======
+ 	#contact form {
+ 		display: inline-block;
+ 		/*width: 50%;*/
+>>>>>>> gilles
  	}
 
- 	#contacts article {
+ 	#contact article {
  		display: inline-block;
  		right: 0rem;
  		/*width: 20%*/
  	}
 
 
-
-
-
- /*
- 	Responsive desing
-  */
+}
  
- /*
- 	Gestion de style audela du smartphone
-  */
 
-   /* Gestion pour les appareil au-dela de 1100 px */
-
-  @media screen and (min-width: 1100px) {
-  	html { font-size: 62.5%; }
-  	section { max-width: 110rem; margin: auto; }
-
-
-  	/* fin de la configuration pour les ecrant superieur à 1100px */
-  }
- 
+/*
+MEDIA QUERIES AU-DELA DE 1100px
+*/
