@@ -1,13 +1,13 @@
-$(document).ready(function{
+$(document).ready(function(){
 
 	// recuperation du formulaire en cliquant sur le submit
-		$('button').on(click, function(event){
+		$('button').on('click', function(event){
 
 			// suppression de l'action part default
 				event.preventDefault();
 			// recupération des données du formulaire et 
 			// transphormation des données pour transmition du formulaire au fichier php
-				var forumlaire = $('form');
+				var formulaire = $('form');
 				var data = formulaire.serialize();
 
 			// envoie des données recupérer au fichier PHP
