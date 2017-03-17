@@ -8,12 +8,12 @@
 		if ( ! empty($_POST) ) {
 
 			// initialisation des variables erreurs
-				$erreur_civilite   = '';
-				$erreur_nom        = '';
-				$erreur_prenom     = '';
-				$erreur_entreprise = '';
-				$erreur_telephone  = '';
-				$erreur_emai       = '';
+				$erreur_civilite   = '' ;
+				$erreur_nom        = '' ;
+				$erreur_prenom     = '' ;
+				$erreur_entreprise = '' ;
+				$erreur_telephone  = '' ;
+				$erreur_emai       = '' ;
 
 			// initialisation des variables de données
 				$civilite   = '' ;
@@ -54,9 +54,10 @@
 
 						'civilite'        => $civilite,
 						'nom'             => $nom,
-						'prenom'          => $prenom
-
-
+						'prenom'          => $prenom,
+						'entreprise' => $entreprise,
+						'telephone' => $telephone,
+						'email' => $email
 						);
 
 				// transphormation du resultat en json afin de pouvoir etre lu en jQuery
