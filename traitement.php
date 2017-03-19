@@ -18,7 +18,8 @@
 		 */
 		
 		 	function estPoste($champ) {
-		 		$existe = (! empty($_POST[$champ]) && trim($_POST[$champ]) !== '' ) ;
+		 		global $donnees_formulaire;
+		 		$existe = (! empty($donnees_formulaire) && trim($donnees_formulaire) !== '' ) ;
 		 		return $existe; // retourne le resultat TRUE ou FALSE
 
 
@@ -29,13 +30,13 @@
 		if ( !empty( $_POST ) && !empty( $_POST['donnees'] ) ) {
 
 			// initialisation des variables erreurs
-				$erreur             = array();
+				$erreurs            = array();
 				$erreur_civilite    = '' ;
 				$erreur_nom         = '' ;
 				$erreur_prenom      = '' ;
 				$erreur_entreprise  = '' ;
 				$erreur_telephone   = '' ;
-				$erreur_emai        = '' ;
+				$erreur_email       = '' ;
 				$erreur_objet       = '' ;
 				$erreur_description = '' ;
 
@@ -57,8 +58,27 @@
 				// on retranscrit la recuperation en tableau pour traitement
 					parse_str($recuperation_post, $donnees_formulaire);
 
-
+					
 					// verification des champs obligatoires
+						// creation du tableau de controle
+							 $controle = array (
+												'civilite'   => 'civilite',
+												'nom'        => 'nom',
+												'prenom'     => 'prenom',
+												'entreprise' => 'entreprise',
+												'telephone'  =>	'telephone',
+												'email'      =>	'email',
+												'objet'      => 'objet'
+												);
+
+						// verification des données
+							foreach ($controle as $key => $champ) {
+								if (estPoste($champ) == FALSE ) {
+
+									$erreurs[$champ] = ' - Champ obligatoire -';
+								}
+							// fin du foreach pour vérification de saisi formulaire	
+							}
 						
 					
 					// recuperation des données
@@ -69,17 +89,22 @@
 
 
 
+				// definition de l'etat du traitement
+					if ( ! empty($erreurs) ){
+						$etat = 'erreur';
+					} else { $etat = 'reussite'; }
 					
 
 				// création de la variable de renvoi : resultat
-					$resultat =  array(
+					$resultat  =  array(
 						'etat'               => $etat,
+						'erreur_generale'    => $erreurs,
 						'erreur_civilite'    => $erreur_civilite,
 						'erreur_nom'         => $erreur_nom,
 						'erreur_prenom'      => $erreur_prenom,
 						'erreur_entreprise'  => $erreur_entreprise,
 						'erreur_telephone'   => $erreur_telephone,
-						'erreur_emai'        => $erreur_telephone,
+						'erreur_emai'        => $erreur_email,
 						'erreur_objet'       => $erreur_objet,
 						'erreur_description' => $erreur_description,
 						
@@ -93,8 +118,7 @@
 						'description' => $description
  						);
 
-				// definition de l'etat du traitement
-					$etat = 'reussite';
+				
 
 
 				// transphormation du resultat en json afin de pouvoir etre lu en jQuery
