@@ -7,7 +7,7 @@
 	// creation des fonctions
 	
 		/**
-		 * 	fonction estPoste
+		 * 	fonction existe
 		 *
 		 *  cette fonction permet de controler si un champ à bien ete 
 		 *  rempli dans le formulaire
@@ -17,7 +17,7 @@
 		 * 
 		 */
 		
-		 	function estPoste($champ) {
+		 	function existe($champ) {
 		 		global $donnees_formulaire;
 		 		$existe = (! empty($donnees_formulaire[$champ]) && trim($donnees_formulaire[$champ]) !== '' ) ;
 		 		return $existe; // retourne le resultat TRUE ou FALSE
@@ -73,7 +73,7 @@
 
 						// verification des données
 							foreach ($controle as $key => $champ) {
-								if (estPoste($champ) == FALSE ) {
+								if (existe($champ) == FALSE ) {
 
 									$erreurs[$champ] = ' - Champ obligatoire -';
 								}
