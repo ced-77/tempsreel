@@ -19,7 +19,7 @@
 		
 		 	function estPoste($champ) {
 		 		global $donnees_formulaire;
-		 		$existe = (! empty($donnees_formulaire) && trim($donnees_formulaire) !== '' ) ;
+		 		$existe = (! empty($donnees_formulaire[$champ]) && trim($donnees_formulaire[$champ]) !== '' ) ;
 		 		return $existe; // retourne le resultat TRUE ou FALSE
 
 
