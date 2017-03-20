@@ -4,6 +4,32 @@
 
  */
 
+	// Creation des variables de gestion d'erreur
+		$long_max = 255;
+		$long_min = 2;
+
+	// initialisation des variables erreurs
+		$erreurs            = array();
+		$erreur_civilite    = '' ;
+		$erreur_nom         = '' ;
+		$erreur_prenom      = '' ;
+		$erreur_entreprise  = '' ;
+		$erreur_telephone   = '' ;
+		$erreur_email       = '' ;
+		$erreur_objet       = '' ;
+		$erreur_description = '' ;
+
+	// initialisation des variables de données
+		$civilite    = '' ;
+		$nom         = '' ;
+		$prenom      = '' ;
+		$entreprise  = '' ;
+		$telephone   = '' ;
+		$email       = '' ;
+		$objet       = '' ;
+		$description = '' ;
+
+
 	// creation des fonctions
 	
 		/**
@@ -26,29 +52,38 @@
 			// fin de la fonction de controle du formulaire
 			}
 
+
+
+		/**
+		 * 	fonction (verification de la longueur des donnes)
+		 *
+		 * 	fonction pour vérifier la longueur mini et max des champs
+		 *
+		 * @param 
+		 *
+		 * @return TRUE si la longueur est correte, FALSE si la longueur n'est pas correcte
+		 * 		 		 
+		*/
+			function longueurChamp ($champ) {
+				// initialisation des varibles de paramettrage en variables globales
+					global $long_max, $long_min, $donnees_formulaire;
+
+				// condition de vérification et retour de la vérification
+					
+						$resultat =( ! empty($donnees_formulaire[$champ]) and (strlen($donnees_formulaire[$champ]) > $long_min or strlen($donnees_formulaire[$champ]) < $long_max) );
+
+				// retour du resultat
+					return $resultat;
+
+			// fin de la controle de la longueur du champ
+			}
+
+	
+
 	// Verification de la varaible $_POST
 		if ( !empty( $_POST ) && !empty( $_POST['donnees'] ) ) {
 
-			// initialisation des variables erreurs
-				$erreurs            = array();
-				$erreur_civilite    = '' ;
-				$erreur_nom         = '' ;
-				$erreur_prenom      = '' ;
-				$erreur_entreprise  = '' ;
-				$erreur_telephone   = '' ;
-				$erreur_email       = '' ;
-				$erreur_objet       = '' ;
-				$erreur_description = '' ;
-
-			// initialisation des variables de données
-				$civilite    = '' ;
-				$nom         = '' ;
-				$prenom      = '' ;
-				$entreprise  = '' ;
-				$telephone   = '' ;
-				$email       = '' ;
-				$objet       = '' ;
-				$description = '' ;
+			
 				
 
 			// recuperation de la variable $_POST
@@ -73,17 +108,43 @@
 
 						// verification des données
 							foreach ($controle as $key => $champ) {
-								if (existe($champ) == FALSE ) {
+								if ( existe($champ) == FALSE ) {
 
 									$erreurs[$champ] = ' - Champ obligatoire -';
 								}
 							// fin du foreach pour vérification de saisi formulaire	
 							}
+
+
+
+						// verification des données
+							// vérification de la civilité 
+							
+								if ( ! empty( $donnees_formulaire['civilite'] ) and ( $donnees_formulaire['civilite'] == '1' or $donnees_formulaire['civilite'] == '2' or $donnees_formulaire['civilite'] == '3' ) ) {
+										$civilite = $donnees_formulaire['civilite'];
+									} else { $erreur_civilite = 'Civilité non définie'; }
+
+							// vérification de la longueur du nom
+														
+								if ( longueurChamp('nom') ) {
+										$nom = $donnees_formulaire['nom'];
+
+									} else { $erreur_nom = 'Ce champ doit être compris entre 3 et 255 caractère.'; }
+
+							// verification de la longueur du prenom
+								if ( longueurChamp('prenom') ) {
+										$prenom = $donnees_formulaire['prenom'];
+
+									} else { $erreur_prenom = 'Ce champ doit être compris entre 3 et 255 caractère.'; }
+							
+
+
+							
 						
 					
 					// recuperation des données
-						$civilite = $donnees_formulaire['civilite'];
-						$nom      = $donnees_formulaire['nom'];
+						
+						
 						$prenom   = $donnees_formulaire['prenom'];
 						
 

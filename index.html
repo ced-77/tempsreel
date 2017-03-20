@@ -304,8 +304,8 @@
 								<label for="civilite" >Civilité : </label>
 								<select id="civilite" name="civilite" >
 									<option value="2" >Mme</option>
-									<option value="3">Mlle</option>
-									<option value="1" SELECTED >M.</option>
+									<option value="3">Mlle</option> <!-- Laisser le choix car OPCAST veut que l'on laisse le choix à l'utilisateur (je ne suis pas marrier avec mon père )  -->
+									<option value="1" SELECTED >M.</option> <!-- Eviter le chiffre 0 car = à NULL => pas geniale pour les controle de gestion d'erreur alors vaux mieux commencre par 1 car 1 == Non NULL -->
 								</select>
 								<label for="nom" >Votre nom* :</label>
 								<input type="text" name="nom" id="nom" />
