@@ -4,9 +4,18 @@
 
  */
 
+	// initialisation des constantes de configuration
+		define('ADRESSE_MAIL_ENTREPRISE', '');
+		
+
+
 	// Creation des variables de gestion d'erreur
-		$long_max = 255;
-		$long_min = 2;
+		$long_max       = 50;	// longueur max des champs nom et prenom
+		$long_min       = 2; 	// longueur min des champs nom et prenom et objet
+		$long_tel       = 14; 	// longueur du champ téléphone
+		$long_max_objet = 100;	// longueur maxi du champ objet
+
+
 
 	// initialisation des variables erreurs
 		$erreurs            = array();
@@ -59,18 +68,18 @@
 		 *
 		 * 	fonction pour vérifier la longueur mini et max des champs
 		 *
-		 * @param 
+		 * @param string $champ le nom du champ à vérifier
 		 *
 		 * @return TRUE si la longueur est correte, FALSE si la longueur n'est pas correcte
 		 * 		 		 
 		*/
-			function longueurChamp ($champ) {
+			function longueurChamp ($champ, $mini, $maxi) {
 				// initialisation des varibles de paramettrage en variables globales
-					global $long_max, $long_min, $donnees_formulaire;
+					global $donnees_formulaire;
 
 				// condition de vérification et retour de la vérification
 					
-						$resultat =( ! empty($donnees_formulaire[$champ]) and (strlen($donnees_formulaire[$champ]) > $long_min or strlen($donnees_formulaire[$champ]) < $long_max) );
+						$resultat =( ! empty($donnees_formulaire[$champ]) and (strlen($donnees_formulaire[$champ]) > $mini or strlen($donnees_formulaire[$champ]) < $maxi ) );
 
 				// retour du resultat
 					return $resultat;
@@ -126,28 +135,31 @@
 
 							// vérification de la longueur du nom
 														
-								if ( longueurChamp('nom') ) {
+								if ( longueurChamp('nom', $long_min, $long_max ) ) {
 										$nom = $donnees_formulaire['nom'];
 
-									} else { $erreur_nom = 'Ce champ doit être compris entre 3 et 255 caractère.'; }
+									} else { $erreur_nom = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
 
 							// verification de la longueur du prenom
-								if ( longueurChamp('prenom') ) {
+								if ( longueurChamp('prenom', $long_min, $long_max ) ) {
 										$prenom = $donnees_formulaire['prenom'];
 
-									} else { $erreur_prenom = 'Ce champ doit être compris entre 3 et 255 caractère.'; }
+									} else { $erreur_prenom = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+
+							// verification de la longueur du champ objet
+								if ( longueurChamp(	'objet', $long_min, $long_max_objet ) ) {
+										$objet	= $donnees_formulaire['objet'];
+									} else { $erreur_objet = 'Ce champ doit être compris entre 3 et 100 caractère.'; }
+
+
+									
 							
 
 
 							
 						
 					
-					// recuperation des données
-						
-						
-						$prenom   = $donnees_formulaire['prenom'];
-						
-
+					
 
 
 				// definition de l'etat du traitement
@@ -197,5 +209,5 @@
 
 
 
-
+// fin du fichier de traitement du formulaire
  ?>
