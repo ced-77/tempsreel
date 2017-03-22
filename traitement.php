@@ -163,11 +163,32 @@
 
 									} elseif ( ! empty( $donnees_formulaire['objet'] ) ) { $erreur['objet'] = 'Ce champ doit être compris entre 3 et 100 caractère.'; }
 
+							// enregistrement de la description
+								if ( ! empty( $donnees_formulaire['description'] ) ) {
+									$description = $donnees_formulaire['description'];
+								}
+
 
 				// definition de l'etat du traitement
-					if ( ! empty($erreurs) or ! empty($erreur) ){
-						$etat = 'erreur';
-					} else { $etat = 'reussite'; }
+					if ( empty($erreurs) or empty($erreur) ){
+						$etat = 'reussite';
+
+						// initialisation des variable d'envoi du mail
+							$destination_mail = ''; // desitnataire du mail
+							$provenance_mail  = ''; // nom, prenom et mail de la provenance
+							$objet_mail       = ''; // objet du mail
+							$corp_mail        = ''; // corp ou désignation du mail
+
+						// remplissage des varibles de mail
+							$desitnation_mail = ADRESSE_MAIL_ENTREPRISE;
+							$provenance_mail  = 'From: '.$prenom.' '.$nom.' <'.$email.'>\r\n';
+							$objet_mail       = $objet;
+							$corp_mail        = $description;
+
+						// envoie du mail
+							mail($destination_mail, $objet_mail, $corp_mail, $provenance_mail);
+
+					} else { $etat = 'erreur'; }
 					
 
 				// création de la variable de renvoi : resultat

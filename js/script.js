@@ -26,6 +26,8 @@ $(document).ready(function(){
 						// par le fichier de traitement
 							console.log(reponse);
 						// traitement de la réponse du fichier de traitement
+							// verification des erreurs
+								if ( reponse[erreurs] )
 						
 						// Affichage de l'etat de la requette 
 							console.log('Etat de la réponse : '+statut);
