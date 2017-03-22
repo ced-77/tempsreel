@@ -5,28 +5,21 @@
  */
 
 	// initialisation des constantes de configuration
-		define('ADRESSE_MAIL_ENTREPRISE', '');
+		define('ADRESSE_MAIL_ENTREPRISE', 'cedric.ray@orange.fr' ); // adresse mail où le formulaire doit être envoyer
 		
 
 
 	// Creation des variables de gestion d'erreur
 		$long_max       = 50;	// longueur max des champs nom et prenom
-		$long_min       = 2; 	// longueur min des champs nom et prenom et objet
-		$long_tel       = 14; 	// longueur du champ téléphone
+		$long_min       = 3; 	// longueur min des champs nom et prenom et objet
+		$long_tel       = 10; 	// longueur du champ téléphone
 		$long_max_objet = 100;	// longueur maxi du champ objet
 
 
 
 	// initialisation des variables erreurs
-		$erreurs            = array();
-		$erreur_civilite    = '' ;
-		$erreur_nom         = '' ;
-		$erreur_prenom      = '' ;
-		$erreur_entreprise  = '' ;
-		$erreur_telephone   = '' ;
-		$erreur_email       = '' ;
-		$erreur_objet       = '' ;
-		$erreur_description = '' ;
+		$erreurs = array(); // tabeau de la vérification de l'existance des champs
+		$erreur  = array(); // erreur dans la saisie des champs
 
 	// initialisation des variables de données
 		$civilite    = '' ;
@@ -69,18 +62,18 @@
 		 * 	fonction pour vérifier la longueur mini et max des champs
 		 *
 		 * @param string $champ le nom du champ à vérifier
-		 *
 		 * @return TRUE si la longueur est correte, FALSE si la longueur n'est pas correcte
 		 * 		 		 
 		*/
 			function longueurChamp ($champ, $mini, $maxi) {
 				// initialisation des varibles de paramettrage en variables globales
 					global $donnees_formulaire;
-
 				// condition de vérification et retour de la vérification
+						
+					$longueurChamp = strlen( $donnees_formulaire[ $champ ] );
 					
-						$resultat =( ! empty($donnees_formulaire[$champ]) and (strlen($donnees_formulaire[$champ]) > $mini or strlen($donnees_formulaire[$champ]) < $maxi ) );
-
+					$resultat =( ! empty($donnees_formulaire[$champ]) and ($longueurChamp >= $mini and $longueurChamp <= $maxi ) );
+	
 				// retour du resultat
 					return $resultat;
 
@@ -131,55 +124,57 @@
 							
 								if ( ! empty( $donnees_formulaire['civilite'] ) and ( $donnees_formulaire['civilite'] == '1' or $donnees_formulaire['civilite'] == '2' or $donnees_formulaire['civilite'] == '3' ) ) {
 										$civilite = $donnees_formulaire['civilite'];
-									} else { $erreur_civilite = 'Civilité non définie'; }
+									} elseif ( ! empty( $donnees_formulaire['civilite'] ) ) { $erreur['civilite'] = 'Civilité non définie'; }
 
 							// vérification de la longueur du nom
 														
-								if ( longueurChamp('nom', $long_min, $long_max ) ) {
+								if ( ! empty( $donnees_formulaire['nom'] ) and  longueurChamp('nom', $long_min, $long_max ) ) {
 										$nom = $donnees_formulaire['nom'];
 
-									} else { $erreur_nom = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['nom'] ))  { $erreur['nom'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
 
 							// verification de la longueur du prenom
-								if ( longueurChamp('prenom', $long_min, $long_max ) ) {
+								if ( ! empty( $donnees_formulaire['prenom'] ) and longueurChamp('prenom', $long_min, $long_max ) ) {
 										$prenom = $donnees_formulaire['prenom'];
 
-									} else { $erreur_prenom = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['prenom'] ) ) { $erreur['prenom'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+
+							// vérification de la longueur de l'entreprise
+								if ( ! empty( $donnees_formulaire['entreprise'] ) and longueurChamp( 'entreprise', $long_min, $long_max) ) {
+										$entreprise = $donnees_formulaire['entreprise']; 
+
+									} elseif ( ! empty( $donnees_formulaire['entreprise'] ) ) { $erreur['entreprise'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+
+							// vérification du numéro de téléphone
+								if ( ! empty( $donnees_formulaire['telephone'] ) and strlen($donnees_formulaire['telephone']) == $long_tel and is_int( intval($donnees_formulaire['telephone'] ) ) == TRUE ) {
+									$telephone = $donnees_formulaire['telephone'];
+
+									} elseif ( ! empty( $donnees_formulaire['telephone'] ) ) { $erreur['telephone'] = 'Le format de saisie : 0123456789 '; }
+
+							// vérification du format de l'adress mail
+								if ( ! empty( $donnees_formulaire['email'] ) and filter_var( $donnees_formulaire['email'], FILTER_VALIDATE_EMAIL) ) {
+									$email = $donnees_formulaire['email'];
+
+									} elseif ( ! empty( $donnees_formulaire['email'] ) ) { $erreur['email'] = 'Ce format d\'email n\'est pas valide'; }
 
 							// verification de la longueur du champ objet
-								if ( longueurChamp(	'objet', $long_min, $long_max_objet ) ) {
+								if ( ! empty( $donnees_formulaire['objet'] ) and longueurChamp(	'objet', $long_min, $long_max_objet ) ) {
 										$objet	= $donnees_formulaire['objet'];
-									} else { $erreur_objet = 'Ce champ doit être compris entre 3 et 100 caractère.'; }
 
-
-									
-							
-
-
-							
-						
-					
-					
+									} elseif ( ! empty( $donnees_formulaire['objet'] ) ) { $erreur['objet'] = 'Ce champ doit être compris entre 3 et 100 caractère.'; }
 
 
 				// definition de l'etat du traitement
-					if ( ! empty($erreurs) ){
+					if ( ! empty($erreurs) or ! empty($erreur) ){
 						$etat = 'erreur';
 					} else { $etat = 'reussite'; }
 					
 
 				// création de la variable de renvoi : resultat
 					$resultat  =  array(
-						'etat'               => $etat,
-						'erreur_generale'    => $erreurs,
-						'erreur_civilite'    => $erreur_civilite,
-						'erreur_nom'         => $erreur_nom,
-						'erreur_prenom'      => $erreur_prenom,
-						'erreur_entreprise'  => $erreur_entreprise,
-						'erreur_telephone'   => $erreur_telephone,
-						'erreur_emai'        => $erreur_email,
-						'erreur_objet'       => $erreur_objet,
-						'erreur_description' => $erreur_description,
+						'etat'                => $etat,
+						'erreur_generale'     => $erreurs,
+						'erreur_saisie_champ' => $erreur,
 						
 						'civilite'    => $civilite,
 						'nom'         => $nom,
