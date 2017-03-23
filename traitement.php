@@ -170,7 +170,7 @@
 
 
 				// definition de l'etat du traitement
-					if ( empty($erreurs) or empty($erreur) ){
+					if ( empty($erreurs) and empty($erreur) ){
 						$etat = 'reussite';
 
 						// initialisation des variable d'envoi du mail
@@ -186,7 +186,8 @@
 							$corp_mail        = $description;
 
 						// envoie du mail
-							mail($destination_mail, $objet_mail, $corp_mail, $provenance_mail);
+							//mail($destination_mail, $objet_mail, $corp_mail, $provenance_mail);
+							//$etat = $etat.' Mail envoyé...';
 
 					} else { $etat = 'erreur'; }
 					

@@ -19,15 +19,32 @@ $(document).ready(function(){
 					type: 'POST',
 					url: 'traitement.php',
 					data: {'donnees':data},
-					dataType: 'html',
+					dataType: 'json',
 
 					success : function(reponse, statut){
 						// affichage du retour de donnée
 						// par le fichier de traitement
 							console.log(reponse);
+							console.log(reponse['etat']);
+
 						// traitement de la réponse du fichier de traitement
 							// verification des erreurs
-								if ( reponse[erreurs] )
+								if ( reponse['etat'] == 'erreur' ) {
+									// marquer : Erreur de saisie...
+										var traitement = 'Erreur de saisie...';
+										$('#resultat').html(traitement);
+
+									} else if ( reponse['etat'] == 'reussite' ) {
+												// marquer : envoi du formulaire reussi...
+													var traitement = 'Envoi du formulaire reussi...';
+													$('#resultat').html(traitement);
+
+
+												} else { 
+														// marquer choix impossible...
+															
+														}
+
 						
 						// Affichage de l'etat de la requette 
 							console.log('Etat de la réponse : '+statut);
