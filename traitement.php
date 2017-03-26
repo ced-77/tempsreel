@@ -10,7 +10,7 @@
 
 
 	// Creation des variables de gestion d'erreur
-		$long_max       = 50;	// longueur max des champs nom et prenom
+		$long_max       = 35;	// longueur max des champs nom et prenom
 		$long_min       = 3; 	// longueur min des champs nom et prenom et objet
 		$long_tel       = 10; 	// longueur du champ téléphone
 		$long_max_objet = 100;	// longueur maxi du champ objet
@@ -19,7 +19,7 @@
 
 	// initialisation des variables erreurs
 		$erreurs = array(); // tabeau de la vérification de l'existance des champs
-		$erreur  = array(); // erreur dans la saisie des champs
+		$erreur  = array(); // erreur dans la saisie du champs
 
 	// initialisation des variables de données
 		$civilite    = '' ;
@@ -35,7 +35,7 @@
 	// creation des fonctions
 	
 		/**
-		 * 	fonction existe
+		 * 	fonction existe()
 		 *
 		 *  cette fonction permet de controler si un champ à bien ete 
 		 *  rempli dans le formulaire
@@ -57,7 +57,7 @@
 
 
 		/**
-		 * 	fonction (verification de la longueur des donnes)
+		 * 	fonction longueurChamp()
 		 *
 		 * 	fonction pour vérifier la longueur mini et max des champs
 		 *
@@ -101,9 +101,7 @@
 							 $controle = array (
 												'civilite'   => 'civilite',
 												'nom'        => 'nom',
-												'prenom'     => 'prenom',
 												'entreprise' => 'entreprise',
-												'telephone'  =>	'telephone',
 												'email'      =>	'email',
 												'objet'      => 'objet'
 												);
@@ -131,19 +129,19 @@
 								if ( ! empty( $donnees_formulaire['nom'] ) and  longueurChamp('nom', $long_min, $long_max ) ) {
 										$nom = $donnees_formulaire['nom'];
 
-									} elseif ( ! empty( $donnees_formulaire['nom'] ))  { $erreur['nom'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['nom'] ))  { $erreur['nom'] = 'Ce champ doit être compris entre '.$long_min.' et '.$long_max.' caractère.'; }
 
 							// verification de la longueur du prenom
 								if ( ! empty( $donnees_formulaire['prenom'] ) and longueurChamp('prenom', $long_min, $long_max ) ) {
 										$prenom = $donnees_formulaire['prenom'];
 
-									} elseif ( ! empty( $donnees_formulaire['prenom'] ) ) { $erreur['prenom'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['prenom'] ) ) { $erreur['prenom'] = 'Ce champ doit être compris entre '.$long_min.' et '.$long_max.' caractère.'; }
 
 							// vérification de la longueur de l'entreprise
 								if ( ! empty( $donnees_formulaire['entreprise'] ) and longueurChamp( 'entreprise', $long_min, $long_max) ) {
 										$entreprise = $donnees_formulaire['entreprise']; 
 
-									} elseif ( ! empty( $donnees_formulaire['entreprise'] ) ) { $erreur['entreprise'] = 'Ce champ doit être compris entre 3 et 50 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['entreprise'] ) ) { $erreur['entreprise'] = 'Ce champ doit être compris entre '.$long_min.' et '.$long_max.' caractère.'; }
 
 							// vérification du numéro de téléphone
 								if ( ! empty( $donnees_formulaire['telephone'] ) and strlen($donnees_formulaire['telephone']) == $long_tel and is_int( intval($donnees_formulaire['telephone'] ) ) == TRUE ) {
@@ -161,7 +159,7 @@
 								if ( ! empty( $donnees_formulaire['objet'] ) and longueurChamp(	'objet', $long_min, $long_max_objet ) ) {
 										$objet	= $donnees_formulaire['objet'];
 
-									} elseif ( ! empty( $donnees_formulaire['objet'] ) ) { $erreur['objet'] = 'Ce champ doit être compris entre 3 et 100 caractère.'; }
+									} elseif ( ! empty( $donnees_formulaire['objet'] ) ) { $erreur['objet'] = 'Ce champ doit être compris entre '.$long_min.' et '.$long_max_objet.' caractère.'; }
 
 							// enregistrement de la description
 								if ( ! empty( $donnees_formulaire['description'] ) ) {
@@ -187,7 +185,7 @@
 
 						// envoie du mail
 							//mail($destination_mail, $objet_mail, $corp_mail, $provenance_mail);
-							//$etat = $etat.' Mail envoyé...';
+							
 
 					} else { $etat = 'erreur'; }
 					

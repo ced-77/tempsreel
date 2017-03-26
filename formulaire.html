@@ -1,40 +1,40 @@
 <!-- Formulaire de contact -->
-						<form >
+<form >
 
-							<h3>Contact</h3>
-							<article>
-								<label for="civilite" >Civilité : </label>
-								<select id="civilite" name="civilite" >
-									<option value="2" >Mme</option>
-									<option value="3">Mlle</option> <!-- Laisser le choix car OPCAST veut que l'on laisse le choix à l'utilisateur (je ne suis pas marrier avec mon père )  -->
-									<option value="1" SELECTED >M.</option> <!-- Eviter le chiffre 0 car = à NULL => pas geniale pour les controle de gestion d'erreur alors vaux mieux commencre par 1 car 1 == Non NULL -->
-								</select>
-								<label for="nom" >Votre nom* :</label>
-								<input type="text" name="nom" id="nom" placeholder="Entre 3 et 50 caractères." />
-								<label for="prenom" >Votre prénom* :</label>
-								<input type="text" name="prenom" id="prenom" placeholder="Entre 3 et 50 caractères."  />
-							</article>
-							<article>
-							<label for="entreprise" >Votre entreprise* :</label>
-							<input type="text" name="entreprise" id="entreprise" placeholder="Entre 3 et 50 caractères." />
-							</article>
-							<article>
-								<label for="telephone" >Votre téléphone* :</label>
-								<input type="text" name="telephone" id="telephone" placeholder="Format : 0123456789." />
-								<label for="email" >Votre E-mail* :</label>
-								<input type="email" name="email" id="email" />
-							</article>
-							<article>
-								<label for="objet" >Objet* :</label>
-								<input type="text" name="objet" id="objet" placeholder="Entre 3 et 100 caractères." />
-							</article>
-							<article>
-								<label for="description" >Descritption détailée :</label>
-								<textarea name="description" id="description"></textarea>
-							</article>
+	<h3>Contact <span id="resultat"></span></h3>
+	<article>
+		<label for="civilite" >Civilité : </label>
+		<select id="civilite" name="civilite" >
+			<option value="2" >Mme</option>
+			<option value="3">Mlle</option> <!-- Laisser le choix car OPCAST veut que l'on laisse le choix à l'utilisateur (je ne suis pas marrier avec mon père )  -->
+			<option value="1" SELECTED >M.</option> <!-- Eviter le chiffre 0 car = à NULL => pas geniale pour les controle de gestion d'erreur alors vaux mieux commencre par 1 car 1 == Non NULL -->
+		</select>
+		<label for="nom" >Votre nom* :</label>
+		<input type="text" name="nom" id="nom" placeholder="Entre 3 et 50 caractères." />
+		<label for="prenom" >Votre prénom* :</label>
+		<input type="text" name="prenom" id="prenom" placeholder="Entre 3 et 50 caractères."  />
+	</article>
+	<article>
+	<label for="entreprise" >Votre entreprise* :</label>
+	<input type="text" name="entreprise" id="entreprise" placeholder="Entre 3 et 50 caractères." />
+	</article>
+	<article>
+		<label for="telephone" >Votre téléphone* :</label>
+		<input type="text" name="telephone" id="telephone" placeholder="Format : 0123456789." />
+		<label for="email" >Votre E-mail* :</label>
+		<input type="email" name="email" id="email" />
+	</article>
+	<article>
+		<label for="objet" >Objet* :</label>
+		<input type="text" name="objet" id="objet" placeholder="Entre 3 et 100 caractères." />
+	</article>
+	<article>
+		<label for="description" >Descritption détailée :</label>
+		<textarea name="description" id="description"></textarea>
+	</article>
 
-							<article>
-								<button name="envoyer" >Envoyer</button>
-							</article>
-														
-						</form>
+	<article>
+		<button name="envoyer" >Envoyer</button>
+	</article>
+								
+</form>

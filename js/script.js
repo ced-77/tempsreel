@@ -10,6 +10,7 @@ $(document).ready(function(){
 				var formulaire = $('form');
 				var data = formulaire.serialize();
 
+
 			// envoie des données recupérer au fichier PHP
 			// de traitement
 				console.log(formulaire);
@@ -31,12 +32,69 @@ $(document).ready(function(){
 							// verification des erreurs
 								if ( reponse['etat'] == 'erreur' ) {
 									// marquer : Erreur de saisie...
-										var traitement = 'Erreur de saisie...';
+										var traitement = ' - Erreur de saisie... - ';
 										$('#resultat').html(traitement);
+
+
+										// creation des tableaus de verification de saisie
+											// champs obligatoires
+												var tableau_verification_obligatoire =  {
+																		nom : 'nom',
+																		entreprise : 'entreprise',
+																		email : 'email',
+																		objet : 'objet'
+																		};
+
+											// champ non obligatoires
+												var tableau_verification_non_obligatoire = {
+																		prenom : 'prenom',
+																		telephone : 'telephone'
+																		};
+
+										// verification des variables obligatoires
+											
+											// verification des champs erreur(s)
+												for ( var donnee in tableau_verification_obligatoire ) {
+
+													// verification de la non existance d'une saisie
+														if ( reponse['erreur_generale'][donnee] != ''  ) {
+
+															// affichage de l'erreur de saisie
+															$('#erreur_'+donnee).html(reponse['erreur_generale'][donnee]);
+
+															// fin de la condition de l'existance du message d'erreur
+															}
+
+														if ( reponse['erreur_saisie_champ'][donnee] != '' ) {
+
+																// affichage de l'erreur de saisie
+																$('#erreur_'+donnee).html(reponse['erreur_saisie_champ'][donnee]);
+
+
+															// fin de la condition de l'existance d'un message d'erreur propre au champ ( mauvaise saisie )
+															}
+												// fin de la boucle de verification des sasisie des variables obligatoires
+												}
+
+
+
+										// verification des variable non-obligatoires
+											// verification des erreurs de saisie
+												for ( var donnee in tableau_verification_non_obligatoire ) {
+
+													if ( reponse['erreur_saisie_champ'][donnee] != '' ) {
+														// affichage de l'erreur de la saisie
+															$('#erreur_'+donnee).html(reponse['erreur_saisie_champ'][donnee]);
+													// fin de la condition de l'existance d'un champs erreur	
+													}
+
+
+												// fin du tableau de verification des chomps non obligatoires
+												} 
 
 									} else if ( reponse['etat'] == 'reussite' ) {
 												// marquer : envoi du formulaire reussi...
-													var traitement = 'Envoi du formulaire reussi...';
+													var traitement = ' - Envoi du formulaire reussi... - ';
 													$('#resultat').html(traitement);
 
 
