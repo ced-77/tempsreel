@@ -36,7 +36,7 @@ $(document).ready(function(){
 										$('#resultat').html(traitement);
 
 
-										// creation des tableaus de verification de saisie
+										// creation des tableaux de verification de saisie
 											// champs obligatoires
 												var tableau_verification_obligatoire =  {
 																		nom : 'nom',

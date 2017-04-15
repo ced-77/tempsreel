@@ -6,21 +6,14 @@
 
 	// initialisation des constantes de configuration
 		define('ADRESSE_MAIL_ENTREPRISE', 'cedric.ray@orange.fr' ); // adresse mail où le formulaire doit être envoyer
-		
-
-
 	// Creation des variables de gestion d'erreur
 		$long_max       = 35;	// longueur max des champs nom et prenom
 		$long_min       = 3; 	// longueur min des champs nom et prenom et objet
 		$long_tel       = 10; 	// longueur du champ téléphone
 		$long_max_objet = 100;	// longueur maxi du champ objet
-
-
-
 	// initialisation des variables erreurs
 		$erreurs = array(); // tabeau de la vérification de l'existance des champs
 		$erreur  = array(); // erreur dans la saisie du champs
-
 	// initialisation des variables de données
 		$civilite    = '' ;
 		$nom         = '' ;
@@ -30,10 +23,7 @@
 		$email       = '' ;
 		$objet       = '' ;
 		$description = '' ;
-
-
 	// creation des fonctions
-	
 		/**
 		 * 	fonction existe()
 		 *
@@ -53,9 +43,6 @@
 
 			// fin de la fonction de controle du formulaire
 			}
-
-
-
 		/**
 		 * 	fonction longueurChamp()
 		 *
@@ -69,33 +56,18 @@
 				// initialisation des varibles de paramettrage en variables globales
 					global $donnees_formulaire;
 				// condition de vérification et retour de la vérification
-						
 					$longueurChamp = strlen( $donnees_formulaire[ $champ ] );
-					
 					$resultat =( ! empty($donnees_formulaire[$champ]) and ($longueurChamp >= $mini and $longueurChamp <= $maxi ) );
-	
 				// retour du resultat
 					return $resultat;
-
 			// fin de la controle de la longueur du champ
 			}
-
-	
-
 	// Verification de la varaible $_POST
 		if ( !empty( $_POST ) && !empty( $_POST['donnees'] ) ) {
-
-			
-				
-
 			// recuperation de la variable $_POST
 				$recuperation_post = $_POST[ 'donnees' ];
-
-
 				// on retranscrit la recuperation en tableau pour traitement
 					parse_str($recuperation_post, $donnees_formulaire);
-
-					
 					// verification des champs obligatoires
 						// creation du tableau de controle
 							 $controle = array (
@@ -105,7 +77,6 @@
 												'email'      =>	'email',
 												'objet'      => 'objet'
 												);
-
 						// verification des données
 							foreach ($controle as $key => $champ) {
 								if ( existe($champ) == FALSE ) {
@@ -114,9 +85,6 @@
 								}
 							// fin du foreach pour vérification de saisi formulaire	
 							}
-
-
-
 						// verification des données
 							// vérification de la civilité 
 							
@@ -165,31 +133,22 @@
 								if ( ! empty( $donnees_formulaire['description'] ) ) {
 									$description = $donnees_formulaire['description'];
 								}
-
-
 				// definition de l'etat du traitement
 					if ( empty($erreurs) and empty($erreur) ){
 						$etat = 'reussite';
-
 						// initialisation des variable d'envoi du mail
 							$destination_mail = ''; // desitnataire du mail
 							$provenance_mail  = ''; // nom, prenom et mail de la provenance
 							$objet_mail       = ''; // objet du mail
 							$corp_mail        = ''; // corp ou désignation du mail
-
 						// remplissage des varibles de mail
 							$desitnation_mail = ADRESSE_MAIL_ENTREPRISE;
 							$provenance_mail  = 'From: '.$prenom.' '.$nom.' <'.$email.'>\r\n';
 							$objet_mail       = $objet;
 							$corp_mail        = $description;
-
 						// envoie du mail
 							//mail($destination_mail, $objet_mail, $corp_mail, $provenance_mail);
-							
-
 					} else { $etat = 'erreur'; }
-					
-
 				// création de la variable de renvoi : resultat
 					$resultat  =  array(
 						'etat'                => $etat,
@@ -205,24 +164,13 @@
 						'objet'       => $objet,
 						'description' => $description
  						);
-
-				
-
-
 				// transphormation du resultat en json afin de pouvoir etre lu en jQuery
 					$resultat_json = json_encode($resultat);
 					// revoie du traitement en json pour utilisation en jQuery
-						echo ($resultat_json); 
-
-
+						echo ($resultat_json);
 				// fin du traitement
 				exit;
 		// fin de la condition de l'existance d'une variable post
 		} else { echo 'erreur0' ; exit; }
-
-
-
-
-
 // fin du fichier de traitement du formulaire
  ?>
